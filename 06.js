@@ -10,7 +10,20 @@
  * @param {Array} users
  * @returns {Array}
  */
-function transformUsers(users) {}
+function transformUsers(users) {
+  return users.map((a) => {
+    let isAdultValue = true;
+    if (a.age >= 20) {
+      isAdultValue = true;
+    } else {
+      isAdultValue = false;
+    }
+    return {
+      fullName: a.firstName + " " + a.lastName,
+      isAdult: isAdultValue,
+    };
+  });
+}
 
 // export 수정 불가
 export { transformUsers };
